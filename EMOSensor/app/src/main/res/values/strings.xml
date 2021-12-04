@@ -1,0 +1,7 @@
+<resources>
+    <string name="app_name">EMOSensor</string>
+    <string name="good_day">Good day, my dear!</string>
+    <string name="feelingEmoAgain">Feeling EMO again?</string>
+    <string name="expressLove">Express L-O-V-E to your husband!</string>
+    <string name="whatsWrong">Aww, what\'s wrong baby?</string>
+</resources>
