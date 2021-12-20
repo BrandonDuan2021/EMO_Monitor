@@ -8,6 +8,7 @@ import android.view.View;
 import android.widget.Button;
 
 import com.example.emosensor.Emo.EmoEvent;
+import com.example.emosensor.Emo.EmoName;
 
 public class FeelingEmo extends AppCompatActivity {
     Button saySth;
@@ -24,7 +25,7 @@ public class FeelingEmo extends AppCompatActivity {
         saySth.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                startActivity(new Intent(FeelingEmo.this, EmoEvent.class));
+                startActivity(new Intent(FeelingEmo.this, EmoName.class));
             }
         });
     }

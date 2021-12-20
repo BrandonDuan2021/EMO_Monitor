@@ -1,0 +1,40 @@
+{
+  "project_info": {
+    "project_number": "826506135414",
+    "firebase_url": "https://emo-senser-default-rtdb.firebaseio.com",
+    "project_id": "emo-senser",
+    "storage_bucket": "emo-senser.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:826506135414:android:0dd0e56b3de2e412fc5c57",
+        "android_client_info": {
+          "package_name": "com.example.emosensor"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "826506135414-2sng1rnndaoei1mrem814ajrli6od1q7.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyB_luQbwujbqL7GNb8NilIRcq5OmdXy6U0"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "826506135414-2sng1rnndaoei1mrem814ajrli6od1q7.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
