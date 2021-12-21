@@ -31,8 +31,7 @@ public class EmoName extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 DatabaseReference ref = FirebaseDatabase.getInstance().getReference();
-                ref.child("Emo Event " + name.getText().toString()).setValue("yeah");
-                startActivity(new Intent(EmoName.this, EmoEvent.class).putExtra("EmoName", "Emo Event" + name.getText().toString()));
+                startActivity(new Intent(EmoName.this, EmoEvent.class).putExtra("EmoName", "Emo Event " + name.getText().toString()));
             }
         });
     }

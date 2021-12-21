@@ -10,6 +10,12 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.EMOSensor">
         <activity
+            android:name=".Emo.EmoHistoryData"
+            android:exported="false" />
+        <activity
+            android:name=".Emo.EmoHistory"
+            android:exported="false" />
+        <activity
             android:name=".Emo.EmoName"
             android:exported="false" />
         <activity
