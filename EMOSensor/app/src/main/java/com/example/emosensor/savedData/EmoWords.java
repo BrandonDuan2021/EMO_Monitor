@@ -5,9 +5,9 @@ import java.util.function.BiPredicate;
 public class EmoWords {
     String time;
     String words;
-    Boolean user;
+    String user;
 
-    public EmoWords(String time, String words, Boolean user){
+    public EmoWords(String time, String words, String user){
         this.time = time;
         this.words = words;
         this.user = user;
@@ -20,7 +20,7 @@ public class EmoWords {
         return words;
     }
 
-    public Boolean getUser(){
+    public String getUser(){
         return user;
     }
 }

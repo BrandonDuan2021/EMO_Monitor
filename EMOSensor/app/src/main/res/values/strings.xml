@@ -4,4 +4,6 @@
     <string name="feelingEmoAgain">Feeling EMO again?</string>
     <string name="expressLove">Express L-O-V-E to your husband!</string>
     <string name="whatsWrong">Aww, what\'s wrong baby?</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
 </resources>

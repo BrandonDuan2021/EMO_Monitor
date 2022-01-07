@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/navigation_file"
+    app:startDestination="@id/allChats">
+
+    <fragment
+        android:id="@+id/allChats"
+        android:name="com.example.emosensor.allChats"
+        android:label="fragment_all_chats"
+        tools:layout="@layout/fragment_all_chats" />
+    <fragment
+        android:id="@+id/allFriends"
+        android:name="com.example.emosensor.allFriends"
+        android:label="fragment_all_friends"
+        tools:layout="@layout/fragment_all_friends" />
+    <fragment
+        android:id="@+id/more"
+        android:name="com.example.emosensor.more"
+        android:label="fragment_more"
+        tools:layout="@layout/fragment_more" />
+</navigation>

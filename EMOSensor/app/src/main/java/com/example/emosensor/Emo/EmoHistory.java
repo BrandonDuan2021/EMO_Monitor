@@ -33,6 +33,7 @@ public class EmoHistory extends AppCompatActivity {
             @Override
             public void onDataChange(DataSnapshot dataSnapshot) {
                 //Log.i("demo", "data changed");
+                history.removeAllViews();
                 for(DataSnapshot child:dataSnapshot.getChildren()) {
                     View view = getLayoutInflater().inflate(R.layout.history_layout, null, false);
                     TextView historyName = view.findViewById(R.id.historyButton);

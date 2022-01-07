@@ -7,6 +7,7 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.Toast;
 
 import com.example.emosensor.ExpressLove;
 import com.example.emosensor.FeelingEmo;
@@ -30,8 +31,14 @@ public class EmoName extends AppCompatActivity {
         setName.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                DatabaseReference ref = FirebaseDatabase.getInstance().getReference();
-                startActivity(new Intent(EmoName.this, EmoEvent.class).putExtra("EmoName", "Emo Event " + name.getText().toString()));
+                if(name.getText().toString().contains("/")){
+                    Toast toast = Toast.makeText(getApplicationContext(), "Invalid name!", Toast.LENGTH_SHORT);
+                    toast.setMargin(50, 50);
+                    toast.show();
+                }else {
+                    DatabaseReference ref = FirebaseDatabase.getInstance().getReference();
+                    startActivity(new Intent(EmoName.this, EmoEvent.class).putExtra("EmoName", "Emo Event " + name.getText().toString()));
+                }
             }
         });
     }
