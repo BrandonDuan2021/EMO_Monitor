@@ -77,10 +77,13 @@ public class EmoHistoryData extends AppCompatActivity {
                         for (DataSnapshot child : dataSnapshot.getChildren()) {
                             String time = (String) child.child("time").getValue();
                             String dialogue = (String) child.child("words").getValue();
+                            String name = (String) child.child("user").getValue();
 
                             View view = getLayoutInflater().inflate(R.layout.dialogue, null, false);
                             TextView timeView = view.findViewById(R.id.timeEmo);
                             TextView dialogueView = view.findViewById(R.id.dialogueEmo);
+                            TextView nameView = view.findViewById(R.id.nameEmo);
+                            nameView.setText(name);
                             timeView.setText(time);
                             dialogueView.setText(dialogue);
                             scrollView.addView(view);
@@ -103,6 +106,8 @@ public class EmoHistoryData extends AppCompatActivity {
                         String time = Calendar.getInstance().getTime().toString();
                         TextView timeShow = view.findViewById(R.id.timeEmo);
                         TextView dialogue = view.findViewById(R.id.dialogueEmo);
+                        TextView emoName = view.findViewById(R.id.nameEmo);
+                        emoName.setText(DataForUse.userName);
                         timeShow.setText(time);
                         dialogue.setText(words);
 
@@ -127,9 +132,7 @@ public class EmoHistoryData extends AppCompatActivity {
                 ValueEventListener idGetter = new ValueEventListener() {
                     @Override
                     public void onDataChange(DataSnapshot dataSnapshot) {
-                        System.out.println("LLL");
                         String x = (String) dataSnapshot.child(DataForUse.userToChatWith).getValue();
-                        System.out.println(x);
                     }
 
                     @Override

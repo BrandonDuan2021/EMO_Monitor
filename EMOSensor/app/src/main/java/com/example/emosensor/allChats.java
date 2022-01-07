@@ -16,11 +16,14 @@ import android.widget.TextView;
 
 import com.example.emosensor.Emo.EmoHistory;
 import com.example.emosensor.Emo.EmoHistoryData;
+import com.example.emosensor.savedData.DataForUse;
 import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.ValueEventListener;
+
+import java.util.ArrayList;
 
 /**
  * A simple {@link Fragment} subclass.
@@ -80,27 +83,33 @@ public class allChats extends Fragment {
         View view = inflater.inflate(R.layout.fragment_all_chats, container, false);
         chats = view.findViewById(R.id.allChatScrlView);
 
-        DatabaseReference ref = FirebaseDatabase.getInstance().getReference("EmoWords");
+        ArrayList<String[]> friendList = DataForUse.getFriendList();
+
+        DatabaseReference ref = FirebaseDatabase.getInstance().getReference("Chats");
         ValueEventListener listener = new ValueEventListener() {
             @Override
             public void onDataChange(DataSnapshot dataSnapshot) {
                 //Log.i("demo", "data changed");
                 chats.removeAllViews();
                 for(DataSnapshot child:dataSnapshot.getChildren()) {
-                    View view = getLayoutInflater().inflate(R.layout.history_layout, null, false);
-                    TextView historyName = view.findViewById(R.id.historyButton);
-                    Button historyButton = view.findViewById(R.id.historyButton);
-                    historyName.setText(child.getKey());
-                    historyButton.setOnClickListener(new View.OnClickListener() {
-                        @Override
-                        public void onClick(View v) {
-                            startActivity(new Intent(getActivity(), EmoHistoryData.class).putExtra("EmoName", child.getKey()));
+                    for(String[] friend: friendList){
+                        if(!friend[1].equals(child.getKey())){
+
+                        }else{
+                            View view = getLayoutInflater().inflate(R.layout.history_layout, null, false);
+                            TextView historyName = view.findViewById(R.id.historyButton);
+                            Button historyButton = view.findViewById(R.id.historyButton);
+                            historyName.setText(friend[0]);
+                            historyButton.setOnClickListener(new View.OnClickListener() {
+                                @Override
+                                public void onClick(View v) {
+                                    DataForUse.userToChatWith = friend[0];
+                                    startActivity(new Intent(getActivity(), EmoHistoryData.class).putExtra("EmoName", child.getKey()));
+                                }
+                            });
+                            chats.addView(view);
                         }
-                    });
-                    chats.addView(view);
-
-
-
+                    }
                 }
             }
             @Override
